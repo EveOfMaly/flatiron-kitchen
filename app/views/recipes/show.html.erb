@@ -1,0 +1,10 @@
+<h2> Recipe Show </h2>
+
+<%= @recipe.name %>
+
+
+<%= form_for @recipe do |f| %>
+    <%=   f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name %>
+<% end %>
+
+
