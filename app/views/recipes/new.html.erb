@@ -1,10 +1,4 @@
 <h2>Create a New Recipe </h2>
 
-<%= form_for @recipe do |f| %>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %><br><br>
-    <%= f.label :ingredients %><br>
-    <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name %><br><br>
-    <%= f.submit  %>
-<% end %>
+<%= render partial: 'form', locals: {recipe: @recipe, ingredients: @ingredients} %>
 
