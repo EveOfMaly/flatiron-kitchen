@@ -1,3 +1,7 @@
 <h1> Recipe List </h1>
 
-<%= render partial: "index", locals: {objects: @recipes} %>
+<ul>
+<% @recipes.each do |recipe| %>
+  <li><%= link_to recipe.name, edit_recipe_path(recipe) %></li>  
+<% end %>
+</ul>
